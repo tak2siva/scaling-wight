@@ -1,7 +1,6 @@
 
 // GLOBAL VARS
 var _api_base_url = "http://staging.vanesystems.com:81/tablet_service_ims/tablet_service_ims.asmx";
-_api_base_url = "http://localhost:3000/blogs";
 var _appID = "be74977e-3fc8-11e3-84ab-000c295e2bea";
 var _trading_medium = 16;
 var _terminal_id = -1;
