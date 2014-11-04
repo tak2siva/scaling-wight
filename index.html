@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html style='height:100%;margin:0'>
+<head>
+<!--  <meta charset="UTF-8">-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script type="text/javascript" src="api_functions.js"> </script>
+<script type="text/javascript" src="function_calls.js"></script>
+</head>
+<body style='height:100%;'>
+<div style="margin-top:15px;"></div>
+
+<div align='center' style="color:#000; font-size:19px; font-weight:bold;">
+	Please Choose Events
+</div>
+
+<div style="margin-top:15px;"></div>
+
+<div align='center' style='width:100%; overflow:hidden;'>
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<button id="events" style='border-width:0;background-color:transparent; padding-bottom:10px; padding-left:5px; padding-right:5px;' onClick="myEvent()">
+					<img style='width:173px; height:173px;' border='0' src='images/events.png'>
+				</button>
+			</td>
+			
+		
+		</tr>
+	</table>
+</div>
+<script>
+ function myEvent() {
+	  window.location.href = "page2.html";
+}
+</script>
+</body>
+</html>

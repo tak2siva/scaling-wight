@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>lightSlider Demo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="stylesheet"  href="lightSlider/css/lightSlider.css"/>
+    <style>
+    	ul{
+			list-style: none outside none;
+		    padding-left: 0;
+		}
+		.content-slider li{
+		    background-color: #ed3020;
+		    text-align: center;
+		    color: #FFF;
+		}
+		.content-slider h3 {
+		    margin: 0;
+		    padding: 70px 0;
+		}
+		.demo{
+			width: 800px;
+		}
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="lightSlider/js/jquery.lightSlider.js"></script> 
+    <script src="api_functions.js"></script> 
+    <script>
+    	 $(document).ready(function() {
+            callback_test();
+		});
+    </script>
+</head>
+<body>
+    <h2> Featured Events </h2>
+	<div class="demo">
+        <ul id="demo" class="content-slider">
+        </ul>
+    </div>	
+</body>

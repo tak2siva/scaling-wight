@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html style='margin:0'>
+<head>
+<!--  <meta charset="UTF-8">
+NOTE: Only the fragment between the body tags is used.
+-->
+<body style='margin:0'>
+	<div style="margin-top:10px"></div>
+	<div style="margin-left:10px; width:100%;">
+		<table>
+			<tr>
+				<td>
+					<div align='left' style="color:#000; font-size:19px; font-weight:bold; margin-left:5px;">
+						<?var titleinfo1?>
+					</div>
+					<div align='left' style="font-size:14px; color:#bbb; margin-left:5px; width:355px;">
+						Select a venue, date and price range to book tickets
+					</div>
+				</td>
+				<td>
+					<button action='return 70' style='border-width:0;background-color:transparent'>
+						<img border='0' src='<?var imginfo?>'>
+					</button>
+				</td>
+			</tr>
+		</table>
+		<div style="margin-top:15px;"></div>
+	
+		<div width='100%' style="font-size:14px;">
+			<table style='vertical-align:top'>
+				<tr>
+					<td style='vertical-align:top;'>
+						<div style="border-style:solid; width:160px; border-width:1px; border-color:#ccc; padding:3px; margin-left:5px;"> 
+							<img style='width:160px; height:125px;' border='0' src='<?var imgevent1?>'>
+						</div>
+					</td>
+					<!-- Event Info -->
+					<td style='vertical-align:top; width:320px;'>
+						<table>
+							<tr>
+								<td align='left' colspan='2' style='vertical-align:top; width:310px;'>
+									<div style="font-size:14px; color:#000;width:310px;">
+										Venue:
+										  <b><?var venuedsc1?></b>
+											<button style='border-width:0px; font-size:14px; padding:8px; background-color:#000; color:#ffffff; visibility:<?var visvenuebut1?>;' action='return 123'>
+												Select Venue
+											</button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td align='left' style='vertical-align:top;'>
+									<div style="margin-top:5px; font-size:14px; color:#000;">
+										Date: <b><?var eventdate1?></b>
+									</div>
+								</td>
+								<td  style='vertical-align:top;'>
+									<div style="margin-top:5px; font-size:14px; color:#000;">
+										<?var timelbl1?><b><?var eventtime1?></b>
+										<button style='border-width:0px; font-size:14px; padding:8px; background-color:#17345E; color:#ffffff; visibility:<?var visdatebut1?>;' action='return 124'>
+											Select Date
+										</button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td align='left' colspan='2'>
+									<div style="margin-top:5px; color:#000; font-size:14px; font-weight:bold">
+										<?var pricerange?><br>
+									</div>	
+								</td>
+							</tr>
+						</table>
+						<!-- Price Ranges -->
+						<table style='font-size:90%;' cellpadding="5">
+							<tr>
+								<td align='left' style="width:100px; vertical-align:bottom;">
+									<div style="font-size:12px; color:#000; width:100%"><?var pdsc1?></div>
+									<button action='return <?var pret1?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol1?>;visibility:<?var pvis1?>; padding:8px; '>
+										<b><?var price1?></b>
+									</button> 
+								</td>
+								<td align='left' style="width:100px; vertical-align:bottom;">
+									<div style="font-size:12px; color:#000; width:100%"><?var pdsc2?></div>
+									<button action='return <?var pret2?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol2?>;visibility:<?var pvis2?>; padding:8px; '>
+										<b><?var price2?></b>
+									</button> 
+								</td>
+								<td align='left' style="width:100px; vertical-align:bottom;">
+									<div style="font-size:12px; color:#000; width:100%"><?var pdsc3?></div>
+									<button action='return <?var pret3?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol3?>;visibility:<?var pvis3?>; padding:8px; '>
+										<b><?var price3?></b>
+									</button> 
+								</td>
+							</tr>
+							<tr>
+								<td align='left' style="width:100px; vertical-align:bottom;">
+									<div style="font-size:12px; color:#000; width:100%"><?var pdsc4?></div>
+									<button action='return <?var pret4?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol4?>;visibility:<?var pvis4?>; padding:8px; '>
+										<b><?var price4?></b>
+									</button> 							
+								</td>
+								<td align='left' style="width:100px; vertical-align:bottom;">
+									<div style="font-size:12px; color:#000; width:100%"><?var pdsc5?></div>
+									<button action='return <?var pret5?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol5?>;visibility:<?var pvis5?>; padding:8px; '>
+										<b><?var price5?></b>
+									</button> 
+								</td>
+								<td align='left' style="width:100px; vertical-align:bottom;">
+									<div style="font-size:12px; color:#000; width:100%"><?var pdsc6?></div>
+									<button action='return <?var pret6?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol6?>;visibility:<?var pvis6?>; padding:8px; '>
+										<b><?var price6?></b>
+									</button> 
+								</td>
+							</tr>
+							<tr>
+								<td align='left' style="width:100px; vertical-align:bottom;">
+									<div style="font-size:12px; color:#000; width:100%"><?var pdsc7?></div>
+									<button action='return <?var pret7?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol7?>;visibility:<?var pvis7?>; padding:8px; '>
+										<b><?var price7?></b>
+									</button> 
+								</td>
+								<td align='left' style="width:100px; vertical-align:bottom;">
+									<div style="font-size:12px; color:#000; width:100%"><?var pdsc8?></div>
+									<button action='return <?var pret8?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol8?>;visibility:<?var pvis8?>; padding:8px; '>
+										<b><?var price8?></b>
+									</button> 
+								</td>
+								<td align='left' style="width:100px; vertical-align:bottom;">
+									<div style="font-size:12px; color:#000; width:100%"><?var pdsc9?></div>
+									<button action='return <?var pret9?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol9?>;visibility:<?var pvis9?>; padding:8px; '>
+										<b><?var price9?></b>
+									</button> 
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style='vertical-align:top; width:265px; margin-left:10px;'>
+						<!-- Ticket Info -->
+						<div style="border-width:<?var ticbord?>px; border-style:solid; border-color:#bbbbbb; padding:5px;">
+							<table style="width:100%; vertical-align:bottom;" align="left">
+								<tr>
+									<td align='left' style="width:80px; vertical-align:bottom;">
+										<div style="font-size:14px; color:#000; font-weight:bold; margin-bottom:10px; margin-top:10px;">
+											<?var sect10?>
+										</div>
+									</td>
+									<td align='left' style="width:55px; vertical-align:bottom;">
+										<div style="font-size:14px; color:#000; font-weight:bold; margin-bottom:10px; margin-top:10px;">
+											<?var qty10?>
+										</div>
+									</td>
+									<td align='left' style="width:65px; vertical-align:bottom;">
+										<div style="font-size:14px; color:#000; font-weight:bold; margin-bottom:10px; margin-top:10px;">
+											<?var tprice10?>
+										</div>
+									</td>
+									<td align='left' style="width:70px; vertical-align:bottom;">
+										<div style="font-size:14px; color:#000; font-weight:bold; margin-bottom:10px; margin-top:10px;">
+											<?var sub10?>
+										</div>
+									</td>
+									<td align='right' style="width:50px; vertical-align:bottom;">
+										<button style='margin-bottom:10px; border-width:0;background-color:transparent;visibility:<?var showup?>;' action='return 28'><img style='width:24;'border='0' src='images/Kiosk buttons/arrowtop.jpg'></button>
+									</td>
+								</tr>
+								<tr>
+									<td align='left' style="width:80px; vertical-align:top;">
+										<div style="font-size:12px; color:#000;">
+											<?var sect11?>
+										</div>
+									</td>
+									<td align='left' style="width:55px; vertical-align:top;">
+										<div style="font-size:12px; color:#000;">
+											<?var qty11?>
+										</div>
+									</td>
+									<td align='left' style="width:65px; vertical-align:top;">
+										<div style="font-size:12px; color:#000;">
+											<?var tprice11?>
+										</div>	
+									</td>
+									<td align='left' style="width:70px; vertical-align:top;">
+										<div style="font-size:12px; color:#000;">
+											<?var sub11?>
+										</div>	
+									</td>
+									<td align='right' style="width:50px; vertical-align:top;">
+										<button style='border-width:0px; font-size:14px; padding:8px; background-color:#17345E; color:#ffffff; visibility:<?var visrem1?>' action='return 121'>
+											X
+										</button>
+									</td>
+								</tr>
+								<tr>
+									<td align='left' style="width:80px; vertical-align:top;">
+										<div style="font-size:12px; color:#000;">
+											<?var sect12?>
+										</div>	
+									</td>
+									<td style="width:55px;" style="width:55px; vertical-align:top;">
+										<div style="font-size:12px; color:#000;">
+											<?var qty12?>
+										</div>	
+									</td>
+									<td align='left' style="width:65px; vertical-align:top;">
+										<div style="font-size:12px; color:#000;">
+											<?var tprice12?>
+										</div>	
+									</td>
+									<td align='left' style="width:70px; vertical-align:top;">
+										<div style="font-size:12px; color:#000;">
+											<?var sub12?>
+										</div>	
+									</td>
+									<td align='right' style="width:50px; vertical-align:top;">
+										<button style='border-width:0px; font-size:14px; padding:8px; background-color:#17345E; color:#ffffff; visibility:<?var visrem2?>' action='return 122'>
+											X
+										</button>
+									</td>
+								</tr>
+								<tr style='vertical-align:bottom;'>
+									<td colspan='5' align='right' style='vertical-align:bottom;'>
+										<button style='margin-top:10px; margin-bottom:10px; border-width:0;background-color:transparent;visibility:<?var showdown?>;' action='return 29'>
+											<img style='width:24;' border='0' src='images/Kiosk buttons/arrowbottom.jpg'>
+										</button>
+									</td>
+								</tr>
+								<tr>
+									<td align='left' colspan='5' style='color:red; vertical-align:bottom; font-size:14px;'>
+										<b><?var ticktotal?></b>
+										<button align="right" style='border-width:0px; font-size:14px; padding:8px; background-color:#17345E; color:#ffffff; visibility:<?var showtick?>' action='return 17'>
+											Checkout
+										</button>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>	
+			</table>
+		</div>
+	</div>
+</body>
+</html>
