@@ -100,7 +100,7 @@ function callback_get_featured_events(soap_response){
     } else { //success
         $(soap_response).find("event").each(function(i){
             // var img_src = $(this).attr("event_category_image_up");
-            $(".demo ul").append("<li><h3 class='event_slide'>"+ $(this).attr("event_desc") +"</h3></li>");
+            $(".demo ul").append("<li><img src='data:image/png;base64,"+ $(this).attr('event_category_image_up') +"'></img><h3 class='event_slide'>"+ $(this).attr("event_desc") +"</h3></li>");
                 if(i==3) return false;
         });       
     }
