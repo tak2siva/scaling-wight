@@ -100,7 +100,7 @@ function callback_test_event_data(event_id){
         soap_response = xml;
         console.log(xml);
         dummy = xml;
-        callback_event_data(xml);
+        callback_event_data(xml, event_id);
     },
     error: function(a){
         console.log(a);

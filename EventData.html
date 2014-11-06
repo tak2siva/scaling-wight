@@ -2,8 +2,12 @@
 <html style='margin:0'>
 <head>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 	<script src="api_functions.js"></script> 
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 	<script type="text/javascript">
+
+		var ticket_count = 0;
 
 		// To parse url params
 		function getParameterByName(name) {
@@ -22,6 +26,27 @@
 			} else {
 				callback_test_event_data(event_id);
 			}
+
+			$(".price_button").click(function(){
+				$( "#dialog" ).dialog();
+			});
+
+			$("#tix_plus").click(function(){
+				ticket_count++;
+				$("#no_of_tickets").html(ticket_count);
+			});
+
+			$("#tix_minus").click(function(){
+				if(ticket_count==0)
+					return false;
+
+				ticket_count--;
+				$("#no_of_tickets").html(ticket_count);
+			});			
+
+			$("#book_button").click(function(){
+				$("#dialog").dialog("close");
+			});
 		});
 	</script>
 </head>
@@ -29,6 +54,15 @@
 NOTE: Only the fragment between the body tags is used.
 -->
 <body style='margin:0'>
+
+	<div id="dialog" title="Add Tickets" hidden="true">
+		<p> No of ticket(s): <span id="no_of_tickets">0</span></p>
+		<br/>
+		<button id="tix_plus"> <b>+</b> </button>
+		<button id="tix_minus"> <b>-</b> </button>
+		<button id="book_button"> <b>Book</b></button>
+	</div>
+
 	<div style="margin-top:10px"></div>
 	<div style="margin-left:10px; width:100%;">
 		<table>
@@ -94,7 +128,7 @@ NOTE: Only the fragment between the body tags is used.
 							<tr>
 								<td align='left' style="width:100px; vertical-align:bottom;">
 									<div style="font-size:12px; color:#000; width:100%"><?var pdsc1?></div>
-									<button action='return <?var pret1?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol1?>;visibility:<?var pvis1?>; padding:8px; '>
+									<button class="price_button" action='return <?var pret1?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol1?>;visibility:<?var pvis1?>; padding:8px; '>
 										<b id="data_price_1"></b>
 									</button> 
 								</td>
