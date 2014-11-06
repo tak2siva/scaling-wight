@@ -98,9 +98,10 @@ function callback_get_featured_events(soap_response){
         apiError($(soap_response).find(response_root).attr('error_desc'), alert_errors);
         callback("error");
     } else { //success
-        $(soap_response).find("event").each(function(){
+        $(soap_response).find("event").each(function(i){
             // var img_src = $(this).attr("event_category_image_up");
             $(".demo ul").append("<li><h3 class='event_slide'>"+ $(this).attr("event_desc") +"</h3></li>");
+                if(i==3) return false;
         });       
     }
 }
