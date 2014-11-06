@@ -63,7 +63,8 @@ function apiRegisterTerminal(data_object, callback) {
     }
 }
 
-function callback_test(){
+// testing page2.html
+function callback_test_page2(){
     $.ajax({
         type: "GET",
         url: "test.xml",
@@ -87,7 +88,53 @@ function callback_test(){
     });
 }
 
+// Testing event_data.html
+function callback_test_event_data(event_id){
+    $.ajax({
+        type: "GET",
+        url: "test.xml",
+        dataType: "xml",
+        async: false,
+    success: function(xml) {
+        //console.log($(xml).find(response_root).find("event"))
+        soap_response = xml;
+        console.log(xml);
+        dummy = xml;
+        callback_event_data(xml);
+    },
+    error: function(a){
+        console.log(a);
+    }
+    });
+}
 
+// To populate EventData.html
+function callback_event_data(soap_response,event_id){
+    var request_root = "Event_Data";
+    var request_subroot = "event_dataRQ";
+    var response_root = "event_dataRS";
+
+    var status = $(soap_response).find(response_root).attr('status');
+    if (status == "ERROR") { //error
+        apiError($(soap_response).find(response_root).attr('error_desc'), alert_errors);
+        callback("error");
+    } else { 
+        // find event by id
+        $(soap_response).find("event[event_id="+ event_id +"]").each(function(){
+            $("#data_image").attr("src","data:image/png;base64," + $(this).attr('event_category_image_up'));
+
+            var show = $(this).find("show")[0];
+            $("#data_venue").html($(show).attr("venue_desc"));
+            $("#data_date").html($(show).attr("show_date_from"));
+
+            var price = $(show).find("price")[0]
+            $("#data_price_1").html($(price).attr("amount"));           
+
+        });       
+    }
+}
+
+// To populate slider page
 function callback_get_featured_events(soap_response){
     var request_root = "Event_Data";
     var request_subroot = "event_dataRQ";
@@ -100,7 +147,7 @@ function callback_get_featured_events(soap_response){
     } else { //success
         $(soap_response).find("event").each(function(i){
             // var img_src = $(this).attr("event_category_image_up");
-            $(".demo ul").append("<li><img src='data:image/png;base64,"+ $(this).attr('event_category_image_up') +"'></img><h3 class='event_slide'>"+ $(this).attr("event_desc") +"</h3></li>");
+            $(".demo ul").append("<li class='event_slide' event_id='"+ $(this).attr('event_id') +"'><img src='data:image/png;base64,"+ $(this).attr('event_category_image_up') +"'></img><h3>"+ $(this).attr("event_desc") +"</h3></li>");
                 if(i==3) return false;
         });       
     }
@@ -135,7 +182,10 @@ function apiGetFeaturedEvents(type, callback) {
             data: soap_request,
             contentType: "text/xml; charset=utf-8",
             success: function(soap_response) { //ajax success
-                callback_get_featured_events(soap_response);
+
+                callback(soap_response);
+
+                //callback_get_featured_events(soap_response);
 
                 /* var return_data = []; 
                 
