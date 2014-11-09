@@ -8,6 +8,7 @@
 	<script type="text/javascript">
 
 		var ticket_count = 0;
+		var current_category = null;
 
 		// To parse url params
 		function getParameterByName(name) {
@@ -15,6 +16,19 @@
     		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         	results = regex.exec(location.search);
     		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		}
+
+		function add_row(){
+			var catg = current_category;
+			var qty = ticket_count;
+			var price = $("data_price_" + catg).html();
+			price = parseInt(price);
+			var total =  ticket_count * price;
+
+			// Add row
+			//$('#booking tr:last').after('<tr>...</tr><tr>...</tr>');
+
+			// Update total value in html
 		}
 
 		$(document).ready(function(){
@@ -28,6 +42,8 @@
 			}
 
 			$(".price_button").click(function(){
+				current_category = $(this).attr("category");
+				console.log(current_category)
 				$( "#dialog" ).dialog();
 			});
 
@@ -45,6 +61,13 @@
 			});			
 
 			$("#book_button").click(function(){
+				current_category = null;
+				ticket_count = 0;
+
+				// Update with appropriate table row
+				add_row();
+
+				$("#no_of_tickets").html(ticket_count);
 				$("#dialog").dialog("close");
 			});
 		});
@@ -128,7 +151,7 @@ NOTE: Only the fragment between the body tags is used.
 							<tr>
 								<td align='left' style="width:100px; vertical-align:bottom;">
 									<div style="font-size:12px; color:#000; width:100%"><?var pdsc1?></div>
-									<button class="price_button" action='return <?var pret1?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol1?>;visibility:<?var pvis1?>; padding:8px; '>
+									<button class="price_button" category="1" action='return <?var pret1?>' style='width:100%; border-width:0px; font-size:14px; color:#000; background-color:<?var pcol1?>;visibility:<?var pvis1?>; padding:8px; '>
 										<b id="data_price_1"></b>
 									</button> 
 								</td>
