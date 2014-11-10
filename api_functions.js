@@ -65,6 +65,13 @@ function apiRegisterTerminal(data_object, callback) {
 
 // testing page2.html
 function callback_test_page2(){
+    callback_get_featured_events(xml_str);
+            $("#demo").lightSlider({
+                loop:true,
+                keyPress:true
+        });
+    return true; // Skip file read
+
     $.ajax({
         type: "GET",
         url: "test.xml",
@@ -90,6 +97,9 @@ function callback_test_page2(){
 
 // Testing event_data.html
 function callback_test_event_data(event_id){
+    callback_event_data(xml_str, event_id);
+    return true; // Skip file read
+
     $.ajax({
         type: "GET",
         url: "test.xml",
