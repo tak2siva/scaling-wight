@@ -1,6 +1,6 @@
 
 // GLOBAL VARS
-var _api_base_url = "http://staging.vanesystems.com:81/tablet_service_ims/tablet_service_ims.asmx";
+var _api_base_url = "http://commerce.verifone.com/api/vanesystem/v1/testservice";
 var _appID = "be74977e-3fc8-11e3-84ab-000c295e2bea";
 var _trading_medium = 16;
 var _terminal_id = -1;
@@ -179,20 +179,31 @@ function apiGetFeaturedEvents(type, callback) {
 					  </soap:Body>\
 					</soap:Envelope>';
 
+                var soap_request_json = {
+    "msgType": "Request",
+    "vimfHeader": {
+        "serviceEndpoint": "tablet_service/tablet_service.asmx",
+        "serviceId": "Event_Data",
+        "clientId": "Thota",
+        "messageId": "12345"
+    },
+    "vimfBody": "<soap:Envelope xmlns:soap='http://www.w3.org/2003/05/soap-envelope' xmlns:p='http://commerce.verifone.com/VANEXMLMessage' xmlns:tab='http://staging.vanesystems.com:81/tablet_service/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'><soap:Header/><soap:Body><tab:Terminal_Registration><tab:inXML><terminalRQ xmlns:ns6='http://commerce.verifone.com/VANEXMLMessage' xmlns='' appID='708d0519-5a7c-48f2-acdb-b223828b0692' city_id='3' gps_coord='123' location_desc='VANEOFFICE' macnum='2020202020202020202020205639335036593451' status='OK' terminalID='1' terminal_desc='IAN-PC2' trading_medium_id='10' venue_id='-1'/></tab:inXML></tab:Terminal_Registration></soap:Body></soap:Envelope>"
+};
+
         
         $.ajax({
             url: _api_base_url+"?op=Event_Data",
             type: "GET",
             async: true,
-            dataType: "xml",
+            dataType: "json",
             timeout: timeout_value,
             processData: false,
             cache: false,
-            headers : {"cache-control": "no-cache"},
-            data: soap_request,
+           // headers : {"cache-control": "no-cache"},
+            data: soap_request_json,
             contentType: "text/xml; charset=utf-8",
             success: function(soap_response) { //ajax success
-
+                soap_response = soap_response.vimfBody;
                 callback(soap_response);
 
                 //callback_get_featured_events(soap_response);
